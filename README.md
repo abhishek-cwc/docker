@@ -1,6 +1,5 @@
 Magento2 Instalation:
 ------------------------------
-sudo su
 1. docker-compose up --build
 2. docker exec -it container_id bash
 3. composer install
