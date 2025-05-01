@@ -47,7 +47,7 @@ services:
          - mysql:db
        depends_on:
          - mysql
-    elasticsearch:
+   elasticsearch:
         container_name: elasticsearch
         image: docker.elastic.co/elasticsearch/elasticsearch:7.9.0
         environment:
