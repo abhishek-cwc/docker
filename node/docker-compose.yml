@@ -1,0 +1,38 @@
+version: '3.3'
+
+services:
+  mysql:
+    image: mysql
+    container_name: mysql
+    ports:
+      - 3307:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root@123
+      - MYSQL_DATABASE=nodedocker
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - node-app
+
+  api:
+    build:
+      context: /home/abhishek/Desktop/node/testinstall/rest-api
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3000:3000"  #This exposes port 3000 to your host
+    # env_file: ./backend/.env
+    volumes:
+      - /home/abhishek/Desktop/node/testinstall/rest-api:/app
+      - /app/node_modules
+    networks:
+      - node-app
+    depends_on:
+      - mysql
+
+volumes:
+  db-data:
+
+networks:
+  node-app:
+    driver: bridge
