@@ -1,7 +1,7 @@
 Docker
 ----------
-1.Magento
-2.NodeJs
+1. Magento
+2. Node
 
 Magento2 Instalation:
 ------------------------------
