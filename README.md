@@ -1,3 +1,8 @@
+Docker
+----------
+1.Magento
+2.NodeJs
+
 Magento2 Instalation:
 ------------------------------
 1. docker-compose up --build
@@ -22,8 +27,11 @@ Magento2 Instalation:
 --elasticsearch-host=elasticsearch \
 --elasticsearch-port=9200
 
-Node Js Using Docker :
--------------------------
-https://github.com/nikitapryymak/mern-auth-jwt/blob/yt-docker/backend/Dockerfile
+Access Mysql shared data volume from outside container
+--------------------------------------------------------
+mysql -h 127.0.0.1 -P 3307 -u root -proot@123 -e "USE nodedocker; SHOW TABLES;"
+
+
+
 
 
