@@ -8,4 +8,6 @@ Enter inside running container:
 	docker exec -it <cid> bash
 Inspect container:	
 	docker container inspect <cid>
-	
+Port mapping
+	docker container run -d -p 3600:80 nginx
+		
