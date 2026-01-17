@@ -1,0 +1,11 @@
+Container:
+
+Run Container:
+	docker container run -d ubuntu
+Enter inside container:
+	docker container run -it ubuntu /bin/bash
+Enter inside running container:
+	docker exec -it <cid> bash
+Inspect container:	
+	docker container inspect <cid>
+	
