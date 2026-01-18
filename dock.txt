@@ -22,8 +22,11 @@ Create image from container
 	docker container run -d -p 3602:80 abhi_nginx
 
 Push image on dockerhub
-	docker image tag abhi_nginx abhi86pathak/abhi_nginx_git
+	docker image tag abhi_nginx abhi86pathak/abhi_nginx:v2
 	docker push abhi86pathak/abhi_nginx_git
+	
+	
+	
 	
 	
 
