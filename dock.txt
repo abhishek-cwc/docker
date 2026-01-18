@@ -6,8 +6,24 @@ Enter inside container:
 	docker container run -it ubuntu /bin/bash
 Enter inside running container:
 	docker exec -it <cid> bash
-Inspect container:	
+Inspect Container:	
 	docker container inspect <cid>
-Port mapping
+Port Mapping
 	docker container run -d -p 3600:80 nginx
+Export Container:
+	docker container export <cid> > abhi_nginx.tar
+	
+Import Container:
+	docker image import abhi_nginx.tar abhi_nginx
+	docker run -d -p 3605:80 abhi_nginx nginx -g "daemon off;"
+	
+Create image from container	
+	docker container commit --author "abhishek pathak" -m "first commit" e544d940eba8 abhi_nginx
+	docker container run -d -p 3602:80 abhi_nginx
+	
+
+	
+
+
+			
 		
