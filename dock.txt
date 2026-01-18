@@ -20,6 +20,11 @@ Import Container:
 Create image from container	
 	docker container commit --author "abhishek pathak" -m "first commit" e544d940eba8 abhi_nginx
 	docker container run -d -p 3602:80 abhi_nginx
+
+Push image on dockerhub
+	docker image tag abhi_nginx abhi86pathak/abhi_nginx_git
+	docker push abhi86pathak/abhi_nginx_git
+	
 	
 
 	
