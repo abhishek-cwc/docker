@@ -14,8 +14,8 @@ COPY project/requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Code comes from bind mount in docker-compose
-# COPY project/ .   <-- intentionally removed because we have linked
+# Flask code comes from bind mount (volume)
+# COPY project/ .  
 
 EXPOSE 5000
 

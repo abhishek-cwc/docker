@@ -30,6 +30,9 @@ Docker compose
 	docker-compose up -d
 	docker-compose down
 	docker-compose logs webapp
+
+Scale the container:
+	docker compose up --scale webapp=2 -d
 	
 Rebuild docker image:	
 	docker-compose down -v

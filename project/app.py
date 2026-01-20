@@ -48,9 +48,9 @@ def get_users():
     
 @app.route('/ping', methods=['GET'])
 def ping():
-    return jsonify({"message": "pongupdated"}), 200    
+    return jsonify({"message": "pongupdatedv1"}), 200    
     
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
 
