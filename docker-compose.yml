@@ -1,0 +1,42 @@
+version: '3.3'
+
+services:
+  db_mysql:
+    image: mysql:8.0
+    container_name: db_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root@123
+      MYSQL_DATABASE: flask_db
+    command: --default-authentication-plugin=mysql_native_password --skip-ssl  
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - node-app
+
+  webapp:
+    build: .
+    ports:
+      - "5001:5001"
+    depends_on:
+      - db_mysql
+    volumes:
+      - ./project:/code  
+    environment:
+      DB_HOST: db_mysql
+      DB_USER: root
+      DB_PASSWORD: root@123
+      DB_NAME: flask_db
+    restart: unless-stopped  
+    networks:
+      - node-app
+
+volumes:
+  mysql_data:
+
+networks:
+  node-app:
+    driver: bridge
+
