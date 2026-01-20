@@ -1,7 +1,8 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 import os
 from urllib.parse import quote_plus
+import socket
 
 app = Flask(__name__)
 
@@ -46,9 +47,16 @@ def get_users():
         })
     return jsonify(result), 200
     
-@app.route('/ping', methods=['GET'])
+@app.route("/ping")
 def ping():
-    return jsonify({"message": "pongupdatedv1"}), 200    
+    client_ip = request.remote_addr  # IP of the client
+    headers = dict(request.headers)  # All HTTP headers
+    return jsonify({
+        "message": "pong",
+        "client_ip": client_ip,
+        "headers": headers,
+        "container": socket.gethostname()
+    })  
     
 
 if __name__ == '__main__':
